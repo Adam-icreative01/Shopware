@@ -2,6 +2,7 @@
 
 ###> shopware/core ###
 /cusom/plugins/SwagBasicExample/*
+/custom/plugins/SwagPayPal/*
 /vendor/*
 .env
 /bin/*
