@@ -1,0 +1,57 @@
+{% block swag_blog_category_list %}    
+<sw-page class="swag-blog-category-list">
+    <template #search-bar >
+        <sw-search-bar
+            initial-search-type="blog_category"
+            :initial-search="term"
+            @search="onSearch"
+        />
+    </template>
+
+
+    {% block swag_blog_category_list_actions %}
+        <template #smart-bar-actions>
+            {% block swag_blog_category_list_smart_bar_actions %}
+            <sw-button                
+                :router-link="{name: 'swag.blog.category.create' }"
+                class="swag-blog-category-add_category"
+                variant="primary"
+            >
+                {{ $tc('swag-blog-category.list.addButtonText') }}
+            </sw-button>
+            {% endblock %}
+        </template>
+    {% endblock %}
+
+    {% block swag_blog_category_list_language_switch %}
+        <template #language-switch>
+            <sw-language-switch @on-change="onChangeLanguage" />
+        </template>
+    {% endblock %}
+
+    <template #content>
+        {% block swag_blog_category_list_content %}
+        <div class="swag-blog-category-list__content">
+            {% block swag_blog_category_list_grid %}
+                <template v-if="blogCategories && blogCategories.length">
+                    <sw-entity-listing                    
+                        :items="blogCategories"
+                        {# class="swag-blog-category-list__grid" #}
+                        :columns="columns"
+                        :repository="blogCategoryRepository"
+                        :showSelection="false"                  
+                        identifier="swag-blog-category-list" 
+                        detail-route="swag.blog.category.detail"          
+                    >                    
+                    </sw-entity-listing>
+                </template>
+
+                <template v-else>
+                    <p>No categories found...</p>
+                </template>
+            {% endblock %}    
+        </div>
+        {% endblock %}
+    </template>
+</sw-page>
+{% endblock %} 

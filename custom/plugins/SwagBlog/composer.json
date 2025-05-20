@@ -1,0 +1,39 @@
+{
+    "name": "swag-blog/swag-blog",
+    "description": "swag-blog/swag-blog",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "~6.6.0"
+    },
+    "authors": [
+        {
+            "name": "KotwalAdam",
+            "email": "helloworld@gmail.com",
+            "homepage": "https://github.com/Adam-icreative01"
+        }
+    ],
+    "extra": {
+        "shopware-plugin-class": "SwagBlog\\SwagBlog",
+        "label": {
+            "de-DE": "Skeleton plugin",
+            "en-GB": "Blog"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "SwagBlog\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SwagBlog\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
+    }
+}

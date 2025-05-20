@@ -1,0 +1,62 @@
+{% block swag_blog_list %}
+    <sw-page class="swag-blog-list">
+
+        <template #search-bar >
+            <sw-search-bar
+                initial-search-type="blog"
+                :initial-search="term"
+                @search="onSearch"
+            />
+        </template>
+
+
+        {% block swag_blog_list_smart_bar_actions %}
+            <template #smart-bar-actions>
+                <sw-button variant="primary" :routerLink="{ name: 'swag.blog.create' }">
+                    {{ $tc('swag-blog.list.addButtonText')}}                
+                </sw-button>
+            </template>
+        {% endblock %}
+
+        {% block swag_blog_list_language_switch %}
+            <template #language-switch>
+                <sw-language-switch @on-change="onChangeLanguage" />
+            </template>
+        {% endblock %}
+
+        <template #content>
+            {% block swag_blog_list_content %}
+                <div>
+                    {% block swag_blog_list_grid %}
+                        <template v-if="blogs && blogs.length">
+                            <sw-entity-listing 
+                                v-if="blogs"
+                                :items="blogs"
+                                :columns="columns"
+                                :repository="blogRepository"
+                                :showSelection="false"
+                                identifier="swag-blog-list"
+                                detail-route="swag.blog.detail">
+                                    <template #column-releaseDate="{ item }">
+                                        {{ new Date(item.release_date).toLocaleDateString() }}
+                                    </template>
+
+                                    <template #column-blogCategories="{ item }">
+                                        {{ item.blogCategories.map(cat => cat.translated?.name || cat.name).join(', ') }}
+                                    </template>
+
+                                     {# <template #column-products="{ item }">
+                                        {{ item.products.map(prod => prod.translated?.name || prod.name).join(', ') }}
+                                    </template> #}
+                            </sw-entity-listing>
+                        </template>
+
+                        <template v-else>
+                            <p>No Blogs Found...</p>
+                        </template>
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </template>
+    </sw-page>
+{% endblock %}

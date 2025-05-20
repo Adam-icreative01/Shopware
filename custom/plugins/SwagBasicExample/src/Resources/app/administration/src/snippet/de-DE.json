@@ -1,0 +1,16 @@
+{
+    "swag-example": {
+        "general": {
+            "mainMenuItemGeneral": "Blog",
+            "descriptionTextModule": "Hello World"
+        },
+
+        "list" : {
+            "swagExampleList": "Blog List",
+            "addButtonText" : "Add Blog",
+            "columnName" : "Name",
+            "columnDiscount" : "Discount",
+            "columnDiscountType" : "Discount Type"
+        }
+    }
+}

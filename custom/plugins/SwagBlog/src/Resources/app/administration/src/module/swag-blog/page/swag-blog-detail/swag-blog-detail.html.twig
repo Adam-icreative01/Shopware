@@ -1,0 +1,84 @@
+{% block swag_blog_detail %}
+    <sw-page class="swag-blog-detail">
+        <template #smart-bar-actions>
+            <sw-button-process
+                :isLoading="isLoading"
+                :processSuccess="isSaveSuccessful"
+                variant="primary"
+                @click="onSave"
+            >
+                {{ $tc('global.default.save') }}
+            </sw-button-process>
+            <sw-button @click="onCancel">
+                {{ $tc('global.default.cancel') }}
+            </sw-button>
+        </template>
+
+        {% block swag_blog_detail_language_switch %}
+            <template #language-switch>
+                <sw-language-switch @on-change="onChangeLanguage" />
+            </template>
+        {% endblock %}
+
+        <template #content>
+            <sw-card>    
+                <sw-container columns="1" v-if="blog">
+                    <sw-text-field
+                        v-model:value="blog.name"                    
+                        name="name"
+                        :label="$tc('swag-blog.detail.labelName')"
+                        :placeholder="placeholder(blog, $tc('swag-blog.detail.placeolderName'))"
+                        validation="required"
+                    />           
+
+                    <sw-text-editor
+                        v-model:value="blog.description"
+                        :label="$tc('swag-blog.detail.labelDescription')"
+                        :placeholder="placeholder(blog, 'description', $tc('swag-blog.detail.placeholderDescription'))"
+                        name="description"
+                        sanitize-input                        
+                    /> 
+
+                    <sw-text-field
+                        v-model:value="blog.author"                        
+                        :label="$tc('swag-blog.detail.labelAuthor')"
+                        :placeholder="placeholder(blog, $tc('swag-blog.detail.placeolderAuthor'))"
+                        validation="required"
+                    />  
+
+                    <sw-checkbox-field
+                        v-model:value="blog.active"                        
+                        :label="$tc('swag-blog.detail.active')"
+                        :placeholder="placeholder(blog, $tc('swag-blog.detail.active'))"
+                        validation="required"
+                    />
+
+                    <sw-datepicker
+                        v-model:value="blog.release_date"                        
+                        hide-hint
+                        :label="$tc('swag-blog.detail.releaseDate')"
+                        :placeholder="$tc('swag-blog.detail.datePlaceholder')"
+                    />      
+
+                    <sw-entity-multi-select
+                        v-model:value="blog.blogCategories"                        
+                        :criteria="categoryCriteria"
+                        :placeholder="$tc('swag-blog.detail.categoriesPlaceholder')"
+                        entity-name="blog_category"
+                        :entity-collection="blog.blogCategories"    
+                        @update:entity-collection="onChange"
+                    />
+
+                    <sw-entity-multi-select
+                        v-model:value="blog.products"                        
+                        :criteria="productCriteria"
+                        :placeholder="$tc('swag-blog.detail.productPlaceholder')"
+                        entity-name="product"
+                        :entity-collection="blog.products"    
+                        @update:entity-collection="onProductsChange"
+                    />                   
+                </sw-container>
+            </sw-card>
+        </template>
+    </sw-page>
+{% endblock %}

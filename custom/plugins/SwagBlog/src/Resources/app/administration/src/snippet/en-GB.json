@@ -1,0 +1,44 @@
+{
+    "swag-blog": {
+        "general": {
+            "mainMenuItemGeneral": "My Blog Module",
+            "descriptionTextModule": "Manage this custom module here"
+        },
+        "list" : {
+            "swagExampleList": "Blog List",
+            "addButtonText" : "Add Blog",
+            "columnName" : "Name",
+            "columnDiscount" : "Discount",
+            "columnDiscountType" : "Discount Type"
+        },
+        "detail" : {
+            "swagExampleDetail": "Blog Detail",
+            "placeolderName" : "Blog Name",
+            "labelName" : "Name",
+            "labelDescription" : "Description",
+            "labelAuthor" : "Author",
+            "placeholderAuthor" : "Blog Author",
+            "active" : "isActive",
+            "placeholderDescription" : "Blog Description",
+            "lableCategories" : "Categories",
+            "categoriesPlaceholder" : "Select Categories...",
+            "releaseDate" : "Release Date",
+            "datePlaceholder" : "Select Date..."
+        }
+    },
+
+    "swag-blog-category" : {
+        "general" : {
+            "mainMenuItemGeneral" : "My Blog Category Module",
+            "descriptionTextModule" : "Manage this custom module here"
+        },
+
+        "list" : {
+            "swagExampleList": "Blog Category List",
+            "addButtonText" : "Add Blog Category",
+            "columnName" : "Name",
+            "columnDiscount" : "Discount",
+            "columnDiscountType" : "Discount Type"
+        }
+    }
+}

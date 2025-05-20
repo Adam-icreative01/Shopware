@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+
+    <!-- TextField & Password -->
+    <card>
+        <title>Minimal configuration</title>
+        <input-field type="text">
+            <name>firstName</name>
+            <label>First Name</label>
+            <defaultValue>First Name</defaultValue>
+            <copyable>true</copyable>
+            <minLength>5</minLength>
+        </input-field>
+
+        <input-field type="text">
+            <name>lastName</name>
+            <label>Last Name</label>
+            <defaultValue>Last Name</defaultValue>
+            <copyable>true</copyable>
+            <minLength>5</minLength>
+        </input-field>
+
+        <input-field type="password">
+            <name>password</name>
+            <label>Password</label>
+            <placeholder>Enter Password</placeholder>
+            <minLength>5</minLength>
+            <maxLength>20</maxLength>
+        </input-field>
+    </card>
+
+    <!-- Textarea & TextEditor -->
+    <card>
+        <title>Textarea and TextEditor</title>
+        <input-field type="textarea"> 
+            <name>description</name>
+            <copyable>true</copyable>
+            <placeholder>Description</placeholder>
+        </input-field>
+        <component name="sw-text-editor">
+            <name>textEditor</name>
+            <label>Write some nice text with WYSIWYG editor</label>
+            <placeholder>Write Something inside it </placeholder>
+        </component>
+    </card>
+
+    <!-- URL -->
+    <card>
+        <title>URL</title>
+        <input-field type="url">
+            <name>url</name>
+            <copyable>true</copyable>
+            <placeholder>Enter website</placeholder>
+            <minLength>5</minLength>
+        </input-field>
+    </card>
+
+    <!-- Int | FLoat | Bool | Checkbox -->
+    <card>
+        <title>INT | FLOAT | BOOL | CHECKBOX</title>
+        <input-field type="int">
+            <name>telephone</name>    
+            <placeholder>Enter Phone Number</placeholder>                    
+            <minLength>5</minLength>
+        </input-field>
+
+        <input-field type="float">
+            <name>price</name>    
+            <placeholder>Price</placeholder>                    
+            <minLength>5</minLength>
+        </input-field>
+
+        <input-field type="bool">
+            <name>check</name>     
+            <label>Active</label>                                         
+        </input-field>
+
+        <input-field type="checkbox">
+            <name>checkbox</name>   
+            <label>Checkbox</label> 
+        </input-field>
+    </card>
+
+    <!-- DateTime | Date | Time -->
+    <card>
+        <title>DATETIME</title>
+        <input-field type="datetime">
+            <name>datetime</name>
+            <label>Date Time</label>
+        </input-field>
+
+        <input-field type="date">
+            <name>date</name>
+            <label>Date</label>
+        </input-field>
+
+        <input-field type="time">
+            <name>time</name>
+            <label>Time</label>
+        </input-field>
+    </card>
+
+    <!-- ColorPicker -->
+    <card>
+        <title>COLORPICKER</title>
+        <input-field type="colorpicker">
+            <name>colorpicker</name>
+        </input-field>
+    </card>
+
+    <!-- Single-Select | Multi-Select -->
+    <card>
+        <title>SELECT</title>
+        <input-field type="single-select">
+            <name>gender</name>
+            <options>
+                <option>
+                    <id>male</id>
+                    <name>Male</name>
+                    <name lang="de-DE">Male</name>
+                </option>
+                <option>
+                    <id>female</id>
+                    <name>Female</name>
+                    <name lang="de-DE">Female</name>
+                </option>
+            </options>
+            <defaultValue>male</defaultValue>
+            <label>Gender</label>
+            <label lang="de-DE">Gender</label>
+        </input-field>
+
+        <input-field type="multi-select">
+            <name>hobbies</name>
+            <options>
+                <option>
+                    <id>cricket</id>
+                    <name>Cricket</name>
+                </option>
+                <option>
+                    <id>football</id>
+                    <name>Football</name>
+                </option>
+                <option>
+                    <id>volleyball</id>
+                    <name>Volleyball</name>
+                </option>
+            </options>
+            <label>Hobbies</label>
+        </input-field>
+    </card>
+
+</config>

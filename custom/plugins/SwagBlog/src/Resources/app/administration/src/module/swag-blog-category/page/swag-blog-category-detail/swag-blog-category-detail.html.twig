@@ -1,0 +1,38 @@
+{% block swag_blog_category_detail %}
+    <sw-page class="swag-blog-category-detail">
+        <template #smart-bar-actions>
+            <sw-button-process
+                :isLoading="isLoading"
+                :processSuccess="isSaveSuccessful"
+                variant="primary"
+                @click="onSave"
+            >
+                {{ $tc('global.default.save') }}
+            </sw-button-process>
+            <sw-button @click="onCancel">
+                {{ $tc('global.default.cancel') }}
+            </sw-button>
+        </template>
+
+        {% block swag_blog_category_detail_language_switch %}
+            <template #language-switch>
+                <sw-language-switch @on-change="onChangeLanguage" />
+            </template>
+        {% endblock %}
+
+        <template #content>
+            <sw-card>    
+                <sw-container columns="repeat(auto-fit, minmax(250px, 1fr))" gap="0 30px">
+                    <sw-text-field
+                        v-model:value="blogCategory.name"
+                        {# :label="Name" #}
+                        name="name"
+                        label="Name"
+                        :placeholder="placeholder(blogCategory, $tc('swag-blog-category.detail.placeolderName'))"
+                        validation="required"
+                    />                                                
+                </sw-container>
+            </sw-card>
+        </template>
+    </sw-page>
+{% endblock %}

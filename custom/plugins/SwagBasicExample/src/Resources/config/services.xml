@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="BasicExample\Command\ExampleCommand">
+            <tag name="console.command"/>
+        </service>
+
+        <service id="BasicExample\ScheduledTask\ExampleTask">
+            <tag name="shopware.scheduled.task"/>
+        </service>
+
+        <service id="BasicExample\Storefront\Controller\ExampleController" public="true">
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+
+        <service id="BasicExample\Core\Content\BasicExample\BasicExampleDefinition">
+            <tag name="shopware.entity.definition" entity="basic_example" />
+        </service>
+
+    </services>
+</container>
