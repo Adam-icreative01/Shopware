@@ -26,7 +26,7 @@ Component.register('swag-blog-list', {
             return [
                 {
                     property: 'name',                
-                    label: 'Name',
+                    label: this.$tc('swag-blog.list.columnName'),
                     routerLink: 'swag.blog.detail',
                     inlineEdit: 'string',
                     allowResize: true,
@@ -34,42 +34,42 @@ Component.register('swag-blog-list', {
                 },
                 {
                     property: 'description',                
-                    label: 'Description',                    
+                    label: this.$tc('swag-blog.list.columnDescription'),                    
                     inlineEdit: 'string',
                     allowResize: true,
                     primary: true
                 },
                 {
                     property: 'author',                
-                    label: 'Author',                    
+                    label: this.$tc('swag-blog.list.columnAuthor'),                    
                     inlineEdit: 'string',
                     allowResize: true,
                     primary: true
                 },
                 {
                     property: 'releaseDate',                
-                    label: 'Release Date',                                                        
+                    label: this.$tc('swag-blog.list.columnReleaseDate'),                                                        
                     inlineEdit: 'string',
                     allowResize: true,
                     primary: true
                 },
                 {
                     property: 'active',                
-                    label: 'Active',                                                        
+                    label: this.$tc('swag-blog.list.columnActive'),                                                        
                     inlineEdit: 'string',
                     allowResize: true,
                     primary: true
                 },
                 {
                     property: 'blogCategories',
-                    label: 'Categories',                                                        
+                    label: this.$tc('swag-blog.list.columnCategories'),                                                        
                     inlineEdit: 'string',
                     allowResize: true,
                     primary: true
                 },
                 {
                     property: 'products',
-                    label: 'Products',                                                        
+                    label: this.$tc('swag-blog.list.columnProducts'),                                                        
                     inlineEdit: 'string',
                     allowResize: true,
                     primary: true
@@ -97,8 +97,7 @@ Component.register('swag-blog-list', {
             criteria.addAssociation('products');
 
             this.repository = this.repositoryFactory.create('blog');
-            this.repository.search(criteria, Shopware.Context.api).then(response => {
-                // this.blogs.release_date = 
+            this.repository.search(criteria, Shopware.Context.api).then(response => {            
                 this.blogs = response;
             });
         },   

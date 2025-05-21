@@ -45,16 +45,20 @@
                                         {{ item.blogCategories.map(cat => cat.translated?.name || cat.name).join(', ') }}
                                     </template>
 
-                                     {# <template #column-products="{ item }">
+                                     <template #column-products="{ item }">
                                         {{ item.products.map(prod => prod.translated?.name || prod.name).join(', ') }}
-                                    </template> #}
+                                    </template>
                             </sw-entity-listing>
                         </template>
-
-                        <template v-else>
+                    <template v-else>
                             <p>No Blogs Found...</p>
                         </template>
                     {% endblock %}
+
+                    {# {% block swag_blog_list_empty_state %}
+                        <sw-empty-state v-if="">
+                        </sw-empty-state>
+                    {% endblock %} #}
                 </div>
             {% endblock %}
         </template>

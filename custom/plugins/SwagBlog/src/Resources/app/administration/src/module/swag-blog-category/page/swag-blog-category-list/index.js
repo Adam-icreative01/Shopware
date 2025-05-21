@@ -31,7 +31,7 @@ Component.register('swag-blog-category-list', {
             return [
                 {
                     property: 'name',                
-                    label: 'Name',
+                    label: this.$tc('swag-blog-category.list.columnName'),
                     routerLink: 'swag.blog.category.detail',
                     inlineEdit: 'string',
                     allowResize: true,

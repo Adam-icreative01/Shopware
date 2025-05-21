@@ -21,7 +21,7 @@
         {% endblock %}
 
         <template #content>
-            <sw-card>    
+            <sw-card :title="$tc('swag-blog.detail.cardTitleBlogInfo')">    
                 <sw-container columns="1" v-if="blog">
                     <sw-text-field
                         v-model:value="blog.name"                    
@@ -29,6 +29,8 @@
                         :label="$tc('swag-blog.detail.labelName')"
                         :placeholder="placeholder(blog, $tc('swag-blog.detail.placeolderName'))"
                         validation="required"
+                        required
+                        :error="blogNameError"
                     />           
 
                     <sw-text-editor
@@ -44,6 +46,8 @@
                         :label="$tc('swag-blog.detail.labelAuthor')"
                         :placeholder="placeholder(blog, $tc('swag-blog.detail.placeolderAuthor'))"
                         validation="required"
+                        required
+                        :error="blogNameError"
                     />  
 
                     <sw-checkbox-field
@@ -51,6 +55,8 @@
                         :label="$tc('swag-blog.detail.active')"
                         :placeholder="placeholder(blog, $tc('swag-blog.detail.active'))"
                         validation="required"
+                        required
+                        :error="blogNameError"
                     />
 
                     <sw-datepicker

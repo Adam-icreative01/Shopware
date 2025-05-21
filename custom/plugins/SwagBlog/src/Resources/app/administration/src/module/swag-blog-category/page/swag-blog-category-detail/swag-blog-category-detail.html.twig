@@ -1,5 +1,10 @@
 {% block swag_blog_category_detail %}
     <sw-page class="swag-blog-category-detail">
+        {% block swag_blog_category_detail_detail_header %}
+            <template #smart-bar-header>
+                <h2>{{ placeholder(blogCategory, 'name', $tc('swag-blog-category.detail.textHeadline')) }}</h2>
+            </template>
+        {% endblock %}
         <template #smart-bar-actions>
             <sw-button-process
                 :isLoading="isLoading"
@@ -21,15 +26,16 @@
         {% endblock %}
 
         <template #content>
-            <sw-card>    
+            <sw-card :title="$tc('swag-blog-category.detail.cardTitleBlogCategoryInfo')">    
                 <sw-container columns="repeat(auto-fit, minmax(250px, 1fr))" gap="0 30px">
                     <sw-text-field
                         v-model:value="blogCategory.name"
-                        {# :label="Name" #}
                         name="name"
-                        label="Name"
-                        :placeholder="placeholder(blogCategory, $tc('swag-blog-category.detail.placeolderName'))"
+                        :label="$tc('swag-blog-category.detail.labelName')"
+                        :placeholder="placeholder(blogCategory, $tc('swag-blog-category.detail.placeholderName'))"
                         validation="required"
+                        required
+                        :error="blogCategoryNameError"
                     />                                                
                 </sw-container>
             </sw-card>

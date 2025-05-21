@@ -67,7 +67,7 @@ Component.register('swag-blog-category-detail', {
             return criteria;
         },
 
-        // ...mapPropertyErrors('blogCategory', ['name']),
+        ...mapPropertyErrors('blogCategory', ['name']),
     },
 
     watch : {

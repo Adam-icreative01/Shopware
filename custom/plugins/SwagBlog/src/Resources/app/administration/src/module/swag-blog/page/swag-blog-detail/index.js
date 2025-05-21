@@ -82,9 +82,9 @@ Component.register('swag-blog-detail', {
 
         productCriteria() {
             return new Criteria(1, 500); 
-        }
+        },
 
-        // ...mapPropertyErrors('blog', ['name']),
+        ...mapPropertyErrors('blog', ['name']),
     },
 
     watch : {

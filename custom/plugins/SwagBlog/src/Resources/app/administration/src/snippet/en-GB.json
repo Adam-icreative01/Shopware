@@ -8,10 +8,15 @@
             "swagExampleList": "Blog List",
             "addButtonText" : "Add Blog",
             "columnName" : "Name",
-            "columnDiscount" : "Discount",
-            "columnDiscountType" : "Discount Type"
+            "columnDescription" : "Description",
+            "columnAuthor" : "Author",
+            "columnReleaseDate" : "Release Date",
+            "columnActive" : "Active",
+            "columnCategories" : "Categories",
+            "columnProducts" : "Products"
         },
         "detail" : {
+            "cardTitleBlogInfo" : "Blog Info",
             "swagExampleDetail": "Blog Detail",
             "placeolderName" : "Blog Name",
             "labelName" : "Name",
@@ -39,6 +44,13 @@
             "columnName" : "Name",
             "columnDiscount" : "Discount",
             "columnDiscountType" : "Discount Type"
+        },
+
+        "detail" : {
+            "placeholderName" : "Blog Category Name",
+            "labelName" : "Name",
+            "textHeadline" : "Blog Category Detail",
+            "cardTitleBlogCategoryInfo" : "Blog Category Info"
         }
     }
 }
