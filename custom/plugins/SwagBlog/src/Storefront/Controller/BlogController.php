@@ -2,7 +2,7 @@
 
 namespace SwagBlog\Storefront\Controller;
 
-// use Custom\Plugins\SwagBlog\Src\Storefront\Page\BlogPageLoader;
+use Custom\Plugins\SwagBlog\Src\Storefront\Page\BlogPageLoader;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Shopware\Storefront\Controller\StorefrontController;
 use Symfony\Component\HttpFoundation\Response;
