@@ -1,5 +1,17 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
-{% block base_content %}
-    <h1>{{ heading }}</h1>
+{% block base_main %}
+    <h2>Asset:</h2>
+
+    {# Using asset function to display our custom asset #}
+    <img src="{{ asset('bundles/swagblog/unsplash-car.avif', 'asset') }}" width="300px">
+
+        <h2>Icon:</h2>
+        {% sw_icon 'done-outline-24px' style {
+            'size': 'lg',
+            'namespace': 'TestPlugin',
+            'pack': 'solid'
+        } %}
+
+    {{ parent() }}
 {% endblock %}

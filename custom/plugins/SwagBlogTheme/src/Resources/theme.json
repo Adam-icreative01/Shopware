@@ -1,0 +1,22 @@
+{
+  "name": "SwagBlogTheme",
+  "author": "Kotwaladam",
+  "views": [
+     "@Storefront",
+     "@Plugins",
+     "@SwagBlogTheme"
+  ],
+  "style": [
+    "app/storefront/src/scss/overrides.scss",
+    "@Storefront",
+    "app/storefront/src/scss/base.scss"
+  ],
+  "script": [
+    "@Storefront",
+    "app/storefront/dist/storefront/js/swag-blog-theme/swag-blog-theme.js"
+  ],
+  "asset": [
+    "@Storefront",
+    "app/storefront/src/assets"
+  ]
+}
