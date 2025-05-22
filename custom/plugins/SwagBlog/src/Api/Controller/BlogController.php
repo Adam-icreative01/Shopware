@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * @RouteScope(scopes={"api"})
  */
 #[Route(defaults: ['_routeScope' => ['api']])]
-class BlogApiController extends AbstractController
+class BlogController extends AbstractController
 {
     private EntityRepository $blogRepository;
 
@@ -24,9 +24,10 @@ class BlogApiController extends AbstractController
         $this->blogRepository = $blogRepository;
     }
 
-    #[Route(path: '/api/blog', name: 'api.blog.list', methods: ['GET'])]
+    #[Route(path: 'api/blogs', name: 'api.blog.getblogs', methods: ['GET'])]
     public function getAllBlogs(Request $request, Context $context): JsonResponse
     {
+        // dd($request);
         $criteria = new Criteria();
         $criteria->addAssociation('blogCategories');
         $criteria->addAssociation('products');
@@ -36,7 +37,7 @@ class BlogApiController extends AbstractController
         return new JsonResponse($blogs->getEntities());
     }
 
-    #[Route(path: '/api/blog/{id}', name: 'api.blog.detail', methods: ['GET'])]
+    #[Route(path: '/api/blog/{id}', name: 'api.blog.get-single-blog', methods: ['GET'])]
     public function getBlog(string $id, Context $context): JsonResponse
     {
         $criteria = new Criteria([$id]);
