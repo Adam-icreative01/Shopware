@@ -1,0 +1,18 @@
+{% block sw_cms_block_my_image_text_reversed %}
+    <div class="sw-cms-block-my-image-text-reversed">
+        <slot name="left">
+            {% block sw_cms_block_my_image_text_reversed_slot_left %}
+                
+            {% endblock %}
+        </slot>
+
+        <slot name="right">{% block sw_cms_block_my_image_text_reversed_slot_right %}{% endblock %}</slot>
+    </div>
+{% endblock %}
+
+
+
+
+{# You've got a parent div containing the two required slots. 
+If you were to rename the first slot left to something else, you'd have to adjust this in your block's configuration as well.
+#}
