@@ -1,0 +1,21 @@
+.sw-cms-block-custom-image-text-horizontal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+    align-content: stretch;
+    align-items: start;
+    grid-gap: 40px;
+
+    .sw-cms-el-text {
+        padding: 20px;
+    }
+
+    .sw-cms-el-image.is--cover {
+        min-height: 200px;
+    }
+
+    .sw-cms-block-custom-image-text-horizontal__left,
+    .sw-cms-block-custom-image-text-horizontal__center,
+    .sw-cms-block-custom-image-text-horizontal__right {
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 20%);
+    }
+}

@@ -15,6 +15,7 @@ Shopware.Component.register('sw-cms-el-dailymotion', {
     }, 
 
     created() {
+        // console.log("here", this.element.config.dailyUrl.value);
         this.createdComponent();
     },
 

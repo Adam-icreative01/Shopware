@@ -13,10 +13,10 @@
         height: $icon-height;
         width: $icon-width;
 
-        // left: calc(50% - #{$icon-width/2});
-        // top: calc(50% - #{$icon-height/2});
-        left: calc($icon-width/2);
-        top: calc($icon-height/2);
+        left: calc(50% - #{$icon-width/2});
+        top: calc(50% - #{$icon-height/2});
+        // left: calc($icon-width/2);
+        // top: calc($icon-height/2);
         // z-index: 1;
     }
 }

@@ -17,9 +17,6 @@ Shopware.Service('cmsService').registerCmsBlock({
     slots: {
         left: 'text',
         center: 'text',
-        right: 'text',
-        // main : {
-        //     type : 'dailymotion'
-        // }
+        right: 'dailymotion',        
     }
 });

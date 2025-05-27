@@ -59,4 +59,9 @@ class SwagBlog extends Plugin
     public function postUpdate(UpdateContext $updateContext): void
     {
     }
+
+    public function getThemeConfigPath(): ?string
+    {
+        return 'Resources/theme.json';
+    }
 }

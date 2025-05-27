@@ -1,5 +1,4 @@
 // <plugin root>/src/Resources/app/administration/src/module/sw-cms/elements/dailymotion/config/index.js
-
 import template from './sw-cms-el-config-dailymotion.html.twig';
 
 Shopware.Component.register('sw-cms-el-config-dailymotion', {

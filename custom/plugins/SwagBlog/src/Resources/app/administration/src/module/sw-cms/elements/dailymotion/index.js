@@ -1,6 +1,6 @@
-import './component'    
-import './config';
+import './component';
 import './preview';
+import './config';
 
 Shopware.Service('cmsService').registerCmsElement({
     name: 'dailymotion',
@@ -11,7 +11,7 @@ Shopware.Service('cmsService').registerCmsElement({
     defaultConfig: {
         dailyUrl: {
             source: 'static',
-            value: 'Default Text'
+            value: ''
         }
     }
 });

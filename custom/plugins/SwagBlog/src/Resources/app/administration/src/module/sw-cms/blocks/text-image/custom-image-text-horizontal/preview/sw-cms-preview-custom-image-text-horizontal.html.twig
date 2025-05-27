@@ -1,0 +1,42 @@
+{% block sw_cms_block_custom_image_text_horizontal_preview %}
+<div class="sw-cms-preview-custom-image-text-horizontal">
+    <div class="sw-cms-preview-custom-image-text-horizontal__left">
+        <div class="sw-cms-preview-custom-image-text-horizontal__image">
+            <img
+                :src="assetFilter('/administration/static/img/cms/preview_camera_small.jpg')"
+                alt=""
+            >
+        </div>
+        <div class="sw-cms-preview-custom-image-text-horizontal__text">
+            <h2>Lorem</h2>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+
+    <div class="sw-cms-preview-custom-image-text-horizontal__center">
+        <div class="sw-cms-preview-custom-image-text-horizontal__image">
+            <img
+                :src="assetFilter('/administration/static/img/cms/preview_plant_small.jpg')"
+                alt=""
+            >
+        </div>
+        <div class="sw-cms-preview-custom-image-text-horizontal__text">
+            <h2>Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+
+    <div class="sw-cms-preview-custom-image-text-horizontal__right">
+        <div class="sw-cms-preview-custom-image-text-horizontal__image">
+            <img
+                :src="assetFilter('/administration/static/img/cms/preview_glasses_small.jpg')"
+                alt=""
+            >
+        </div>
+        <div class="sw-cms-preview-custom-image-text-horizontal__text">
+            <h2>Dolor</h2>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
