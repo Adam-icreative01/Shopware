@@ -15,7 +15,7 @@
             {% set textSlot  = block.slots.getSlot(pair[2]) %}
 
             <div class="col-12 col-sm-6 col-md-3 mb-4">
-                <div class="d-flex flex-column h-100 border p-3 text-center">
+                <div class="d-flex flex-column h-100 border p-3 text-center position-relative">
                     {% if imageSlot %}
                         <div class="mb-3" data-cms-element-id="{{ imageSlot.id }}">
                             {% sw_include '@Storefront/storefront/element/cms-element-' ~ imageSlot.type ~ '.html.twig' ignore missing with {
@@ -25,7 +25,7 @@
                     {% endif %}
 
                 {# {{ dump(buttonSlot) }} #}
-                    <div class="mb-3" data-cms-element-id="{{ buttonSlot.id }}">
+                    <div class="position-absolute bottom-50 start-50 translate-middle-x mb-3" data-cms-element-id="{{ buttonSlot.id }}">
                         {% sw_include '@Storefront/storefront/element/cms-element-' ~ buttonSlot.type ~ '.html.twig' ignore missing with {
                             'element' : buttonSlot
                         } %}
