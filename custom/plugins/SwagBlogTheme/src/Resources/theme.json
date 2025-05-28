@@ -18,5 +18,18 @@
   "asset": [
     "@Storefront",
     "app/storefront/src/assets"
-  ]
+  ],
+  "config" : {
+    "fields" : {
+      "sw-color-brand-primary" : {
+        "label" : {
+          "en-GB" : "Primary Color",
+          "de-DE" : "Primärfarbe"
+        },
+        "type" : "color",
+        "value" : "darkcyan"
+      }
+    }
+  },
+  "parentTheme" : "Storefront"
 }

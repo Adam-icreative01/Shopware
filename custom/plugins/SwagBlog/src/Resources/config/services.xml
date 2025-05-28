@@ -70,12 +70,6 @@
             <call method="setTwig">
                 <argument type="service" id="twig"/>
             </call>
-        </service>
-
-        <!-- Resolver -->
-         <service id="SwagBlog\DataResolver\DailyMotionCmsElementResolver">
-            <tag name="shopware.cms.data_resolver" />
-        </service>
-        
+        </service>            
     </services>
 </container>

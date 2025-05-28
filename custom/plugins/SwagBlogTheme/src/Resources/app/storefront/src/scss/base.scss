@@ -1,3 +1,5 @@
+$sw-color-brand-primary: #{theme('sw-color-brand-primary')};
+
 body {
-    background-color: azure;
+    background-color: $sw-color-brand-primary;
 }

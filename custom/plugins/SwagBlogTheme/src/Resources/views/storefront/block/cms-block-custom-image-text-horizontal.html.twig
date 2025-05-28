@@ -1,0 +1,45 @@
+{# {% sw_extends '@Storefront/storefront/block/cms-block-image-gallery.html.twig' %} #}
+
+{% block cms_block_custom_image_text_horizontal %}
+    <div class="row custom-image-text-horizontal-block">
+        {% set slotPairs = [
+            ['left-image', 'left-button', 'left-text'],
+            ['center-image', 'center-button', 'center-text'],
+            ['center-image-2', 'center-button-2', 'center-text-2'],
+            ['right-image', 'right-button', 'right-text']
+        ] %}
+
+         {% for pair in slotPairs %}
+            {% set imageSlot = block.slots.getSlot(pair[0]) %}
+            {% set buttonSlot = block.slots.getSlot(pair[1]) %}
+            {% set textSlot  = block.slots.getSlot(pair[2]) %}
+
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="d-flex flex-column h-100 border p-3 text-center">
+                    {% if imageSlot %}
+                        <div class="mb-3" data-cms-element-id="{{ imageSlot.id }}">
+                            {% sw_include '@Storefront/storefront/element/cms-element-' ~ imageSlot.type ~ '.html.twig' ignore missing with {
+                                'element': imageSlot
+                            } %}
+                        </div>
+                    {% endif %}
+
+                {# {{ dump(buttonSlot) }} #}
+                    <div class="mb-3" data-cms-element-id="{{ buttonSlot.id }}">
+                        {% sw_include '@Storefront/storefront/element/cms-element-' ~ buttonSlot.type ~ '.html.twig' ignore missing with {
+                            'element' : buttonSlot
+                        } %}
+                    </div>
+
+                    {% if textSlot %}
+                        <div data-cms-element-id="{{ textSlot.id }}">
+                            {% sw_include '@Storefront/storefront/element/cms-element-' ~ textSlot.type ~ '.html.twig' ignore missing with {
+                                'element': textSlot
+                            } %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
